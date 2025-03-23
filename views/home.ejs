@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title><%= restaurant.name %></title>
 </head>
+<%- include('./partials/nav') %>
 <body>
-  <h1>Home Page</h1>
+  <h1><%= restaurant.name %></h1>
+  <h2>Welcome to <%= restaurant.name %>, a go-to place for healthier and delicious food choices.</h2>
+    <p><strong>Address:</strong> <%= restaurant.address %></p>
+    <p><strong>Contact Number:</strong> <%= restaurant.phone %></p>
+    <p><strong>Availability:</strong> <%= restaurant.isOpen ? "We are open!" : "Sorry, we are closed." %></p>
 </body>
 </html>
