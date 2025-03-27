@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu: <%= category.toUpperCase() %></title>
+</head>
+<%- include('./partials/nav') %>
+<body>
+  <h1><%= restaurant.name %> Menu: </h1>
+  <h1><%= category.toUpperCase() %></h1>
+    <% if (menuItems.length > 0) { %>
+        <ul>
+            <% menuItems.forEach(item => { %>
+                <li>           
+                <h2><%= item.name %> <%= item.rating === 5 ? '⭐️' : '' %>
+                </h2>
+                    <p><strong>Price:</strong> $<%=item.price.toFixed(2)%></p>
+                    <p><strong>Rating:</strong> <%=item.rating.toFixed(1)%> ✰</p>
+                    <p><strong>Details:</strong> <%= item.details%></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</body>
+</html>
